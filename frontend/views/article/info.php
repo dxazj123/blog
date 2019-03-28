@@ -19,7 +19,7 @@
 
     <div class="col-md-9">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">首页</a></li>
+            <li class="breadcrumb-item"><a href="<?=Url::to(['site/index'])?>">首页</a></li>
             <li class="breadcrumb-item active">文章详情</li>
         </ol>
         <p class="text-center title"><?= $info['title']?></p>
