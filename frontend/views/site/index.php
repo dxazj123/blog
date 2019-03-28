@@ -6,31 +6,39 @@
 
     <?= Html::jsFile('@web/css/layui/layui.js'); ?>
     <?= Html::cssFile('@web/css/layui/css/layui.css'); ?>
-
+    <style>
+        a{text-decoration:none;}
+        .panel-body a{font-size:15px;}
+        a:link{text-decoration:none;}
+        a:hover{color:none}
+    </style>
     <div class="col-md-9">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?=Url::to(['site/index'])?>">首页</a></li>
             <li class="breadcrumb-item active">文章列表</li>
         </ol>
-        <div class="table-responsive">
-            <table class="table table-hover">
+        <!-- <div class="table-responsive"> -->
+            <!-- <table class="table table-hover"> -->
                 <?php 
 
                     foreach ($article as $key => $value) {
                         ?>  
-                            <tr>
-                                <td>
-                                    <a href="<?= Url::to(['article/info','id'=>$value['id']])?>"><?php echo $value['title'] ?></a>
-                                </td>
-                                <td class="text-right">
-                                    <span>[ <?= date('Y-m-d',$value['addtime'])?> ]</span>
-                                </td>
-                            </tr>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><a href="<?= Url::to(['article/info','id'=>$value['id']])?>"><?php echo $value['title'] ?></a></h3>
+                                </div>
+                                <div class="panel-body">
+                                <a href="<?= Url::to(['article/info','id'=>$value['id']])?>"><?php echo mb_substr(strip_tags($value['content']),0,200,'utf-8')?>……</a>
+                                </div>
+                                <div class="panel-footer text-right" style="background:#fff"><?php echo date('Y-m-d H:i:s',$value['addtime'])?></div>
+                            </div>
+
+                           
                         <?php
                     }
                  ?>
-            </table>
-        </div>
+            <!-- </table> -->
+        <!-- </div> -->
         
         
         <nav aria-label="Page navigation">
