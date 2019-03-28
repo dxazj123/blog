@@ -1,0 +1,2 @@
+<?php
+return['adminEmail'=>'admin@example.com','supportEmail'=>'support@example.com','user.passwordResetTokenExpire'=>'3600','email'=>'756477101@qq.com','keywords'=>'在线好视频,你家','description'=>'网站描述','totalScript'=>'<script>alert(1)</script>;','email'=>'756477101@qq.com','keywords'=>'在线好视频,你家','description'=>'网站描述','totalScript'=>'&lt;script&gt;alert(1)&lt;/script&gt;;',];
